@@ -1,56 +1,144 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jinyu’s Auto Repair Garage</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Oak & Wrench Auto Repair — Services & Pricing</title>
+  <meta name="description" content="Oak & Wrench Auto Repair — Honest, reliable service. See our services, prices and contact info.">
+  <style>
+    :root{
+      --bg:#f7f8fb; --card:#ffffff; --accent:#1f6feb; --muted:#6b7280; --accent-2:#0b5ed7;
+      --radius:14px; --max-width:1100px;
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,var(--bg),#eef2ff);color:#0f172a;line-height:1.45}
+    .container{max-width:var(--max-width);margin:36px auto;padding:24px}
+
+    header{display:flex;gap:18px;align-items:center}
+    .logo{width:84px;height:84px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:20px}
+    h1{margin:0;font-size:28px}
+    p.lead{margin:6px 0 0;color:var(--muted)}
+
+    .grid{display:grid;grid-template-columns:1fr 360px;gap:22px;margin-top:20px}
+
+    .card{background:var(--card);border-radius:var(--radius);padding:18px;box-shadow:0 6px 18px rgba(16,24,40,0.06)}
+
+    /* Services table */
+    table{width:100%;border-collapse:collapse}
+    thead th{text-align:left;padding:14px 12px;border-bottom:1px solid #eef2ff;color:var(--muted);font-weight:600}
+    tbody td{padding:12px;border-bottom:1px dashed #f1f5f9}
+    .price{text-align:right;font-weight:700}
+    .note{font-size:13px;color:var(--muted);margin-top:10px}
+
+    /* Contact panel */
+    .contact h3{margin-top:0}
+    .meta{display:flex;gap:12px;align-items:center;margin:10px 0}
+    .meta a{text-decoration:none;color:var(--accent);font-weight:600}
+    .hours{font-size:13px;color:var(--muted)}
+
+    /* CTA */
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;text-decoration:none;background:var(--accent);color:#fff;font-weight:700}
+
+    /* Responsive */
+    @media (max-width:880px){
+      .grid{grid-template-columns:1fr;}
+      .logo{width:64px;height:64px;font-size:18px}
+    }
+
+    /* small print table style */
+    .services-header{display:flex;justify-content:space-between;align-items:center}
+    .tags{font-size:13px;color:var(--muted)}
+
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Jinyu’s Auto Repair Garage</h1>
-    <p>Your trusted auto repair experts!</p>
-  </header>
+  <main class="container">
+    <header>
+      <div class="logo" aria-hidden="true">O&amp;W</div>
+      <div>
+        <h1>Oak &amp; Wrench Auto Repair</h1>
+        <p class="lead">Trusted local mechanics — diagnostics, maintenance, and major repairs. Transparent pricing and friendly service.</p>
+      </div>
+    </header>
 
-  <nav>
-    <a href="#services">Services</a>
-    <a href="#prices">Prices</a>
-    <a href="#contact">Contact</a>
-  </nav>
+    <div class="grid">
+      <section class="card" aria-labelledby="services-title">
+        <div class="services-header">
+          <h2 id="services-title">Services &amp; Pricing</h2>
+          <div class="tags">Updated: Oct 2025</div>
+        </div>
 
-  <main>
-    <section id="services">
-      <h2>Our Services</h2>
-      <ul>
-        <li>Engine Diagnostics</li>
-        <li>Oil Change</li>
-        <li>Brake Replacement</li>
-        <li>Transmission Repair</li>
-        <li>AC & Heating Service</li>
-      </ul>
+        <p class="note">All prices are estimates. Final price may vary by vehicle make, model, and condition. Labor rates apply where noted.</p>
+
+        <table aria-describedby="services-desc">
+          <thead>
+            <tr><th>Service</th><th class="price">Price (est.)</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Oil Change (Conventional) — includes 5 qts &amp; filter</td><td class="price">$49</td></tr>
+            <tr><td>Oil Change (Synthetic)</td><td class="price">$89</td></tr>
+            <tr><td>Tire Rotation &amp; Balance</td><td class="price">$39</td></tr>
+            <tr><td>Brake Pad Replacement (per axle — parts not included)</td><td class="price">$199</td></tr>
+            <tr><td>Brake Rotor Resurfacing (per axle)</td><td class="price">$85</td></tr>
+            <tr><td>Battery Test &amp; Replacement (parts extra)</td><td class="price">$25 / battery</td></tr>
+            <tr><td>Wheel Alignment (2 or 4-wheel)</td><td class="price">$89</td></tr>
+            <tr><td>Check Engine Diagnostic (scan + 30 min inspection)</td><td class="price">$79</td></tr>
+            <tr><td>AC Recharge (R-134a) — parts extra</td><td class="price">$129</td></tr>
+            <tr><td>Timing Belt Replacement (avg. job)</td><td class="price">$799</td></tr>
+            <tr><td>Transmission Service (flush + filter where applicable)</td><td class="price">$249</td></tr>
+            <tr><td>Major Engine Repair (estimate required)</td><td class="price">Varies</td></tr>
+          </tbody>
+        </table>
+
+        <p class="note" id="services-desc">We use OEM or high-quality aftermarket parts. Warranties on parts depend on manufacturer; labor warranty 12 months / 12,000 miles.</p>
+
+        <h3 style="margin-top:18px;">Popular Maintenance Packages</h3>
+        <ul>
+          <li><strong>Basic Care:</strong> Oil change, fluid top-up, 15-point inspection — <em>$69</em></li>
+          <li><strong>Premium Care:</strong> Synthetic oil, tire rotation, brake inspection — <em>$139</em></li>
+          <li><strong>Fleet Saver (per vehicle):</strong> Multi-vehicle pricing for business fleets — <em>contact for quote</em></li>
+        </ul>
+
+      </section>
+
+      <aside class="card contact" aria-labelledby="contact-title">
+        <h3 id="contact-title">Contact &amp; Location</h3>
+        <div class="meta">
+          <div>
+            <div style="font-weight:700">Oak &amp; Wrench Auto Repair</div>
+            <div class="hours">123 Garage Lane, Suite B<br>Springfield, Anystate 01234</div>
+          </div>
+        </div>
+
+        <div class="meta">
+          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" style="margin-right:8px"><path fill="#0b5ed7" d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 01.95-.27 11.36 11.36 0 003.54.57 1 1 0 011 1v3.5a1 1 0 01-1 1A18 18 0 013 5a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.54 1 1 0 01-.27.95l-2.18 2.3z"></path></svg>
+          <div><a href="tel:+11234567890">(123) 456-7890</a></div>
+        </div>
+
+        <div class="meta">
+          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" style="margin-right:8px"><path fill="#0b5ed7" d="M21 8a2 2 0 00-2-2h-3V4a2 2 0 00-2-2H10a2 2 0 00-2 2v2H5a2 2 0 00-2 2v10a2 2 0 002 2h14a2 2 0 002-2zM9 4h6v2H9z"></path></svg>
+          <div><a href="mailto:service@oakandwrench.example">service@oakandwrench.example</a></div>
+        </div>
+
+        <div style="margin-top:12px;">
+          <div style="font-weight:700;margin-bottom:8px">Hours</div>
+          <div class="hours">Mon–Fri: 8:00 AM — 6:00 PM<br>Sat: 8:00 AM — 2:00 PM<br>Sun: Closed</div>
+        </div>
+
+        <div style="margin-top:14px">
+          <a class="btn" href="mailto:service@oakandwrench.example?subject=Service%20Request">Request an Appointment</a>
+        </div>
+
+        <hr style="margin:16px 0;border:none;border-top:1px solid #eef2ff">
+        <div style="font-size:13px;color:var(--muted)">Payment: Cash, Visa, Mastercard, Discover. Free Wi‑Fi and courtesy shuttle within 5 miles.</div>
+      </aside>
+    </div>
+
+    <section style="margin-top:20px;text-align:center">
+      <small class="note">© Oak &amp; Wrench Auto Repair — Serving Springfield since 2005. Prices listed are for informational purposes; contact us for a firm quote.</small>
     </section>
 
-    <section id="prices">
-      <h2>Price List</h2>
-      <table>
-        <tr><th>Service</th><th>Price</th></tr>
-        <tr><td>Oil Change</td><td>$40</td></tr>
-        <tr><td>Brake Replacement</td><td>$120</td></tr>
-        <tr><td>Engine Diagnostics</td><td>$75</td></tr>
-        <tr><td>Transmission Repair</td><td>$450</td></tr>
-      </table>
-    </section>
-
-    <section id="contact">
-      <h2>Contact Us</h2>
-      <p><strong>Address:</strong> 123 Garage Lane, Auto City, TX</p>
-      <p><strong>Phone:</strong> (555) 123-4567</p>
-      <p><strong>Email:</strong> info@jinyusautorepair.com</p>
-    </section>
   </main>
-
-  <footer>
-    <p>© 2025 Jinyu’s Auto Repair Garage. All rights reserved.</p>
-  </footer>
 </body>
 </html>
